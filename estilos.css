@@ -1,0 +1,818 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Concert+One&family=Cuprum:ital,wght@0,400..700;1,400..700&family=Encode+Sans:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --rojo: #FF5639; /* Definimos la variable */
+    --gris: #D8D7D7;
+    --negro: #252525;
+    --grisTexto: #5f5f5f;
+    --seccion: #f3f3f3;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Encode Sans';
+}
+
+.colorseccion{
+  background-color: var(--seccion);
+}
+.ancho{
+    margin: auto;
+    max-width: 1200px;
+}
+
+header{
+    
+    border-bottom: 1px var(--gris) solid;
+
+}
+.cabecera{
+    height: 100px;
+    padding: 5px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+figure{
+    display: flex;
+    width: 30%;
+    height: 45%;
+    flex-direction: row;
+    gap: 20px;
+}
+
+figure figcaption{
+    display: none;
+}
+figure img{
+    width: 80%;
+}
+
+.info{
+    text-align: right;
+    width: 33%;
+}
+
+.info i{
+    font-size: 20px;
+    padding-right: 10px;
+    color: var(--gris);
+}
+.info h4{
+    color: var(--rojo);
+    font-weight: 400;
+}
+.info h3{
+    font-weight: 600;
+    padding-bottom: 10px
+}
+
+.correo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.correo .num{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navegacion {
+    position: sticky; /* Hace que el nav sea sticky */
+    top: 0; /* Se pegará a la parte superior */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    background-color: #fff; /* Color de fondo para que sea visible sobre el contenido */
+}
+
+
+.slide{
+    max-width: 1200px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* Asegura que la imagen llene el contenedor sin deformarse*/
+} 
+
+.slides-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide-item {
+    width: 100%;
+    display: none; /* Ocultar todas las imágenes por defecto */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.contenedores{
+    position: relative;
+    z-index: 25;
+}
+.contenedor{
+    display: none;
+}
+
+.active {
+    display: block; /* Mostrar la imagen activa */
+}
+
+.dots {
+    position: absolute; /* Posiciona los dots de forma fija en el contenedor */
+    bottom: 50px;
+    right: 80px;
+    display: flex; /* Alinea los dots en una fila */
+    gap: 10px; /* Espacio entre los dots */
+    z-index: 6; /* Asegúrate de que los dots estén por encima de las imágenes */
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+.forma2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #f87148de;
+    width: 60%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%);
+    z-index: 5;
+}
+
+  .barra{
+    width: 55%;
+    display: flex;
+    justify-content: center;
+  }
+  .menu {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .barra ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .barra li {
+    position: relative;
+  }
+  
+  .barra li a {
+    display: block;
+    padding: 18px 25px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-right: 1px var(--gris) solid;
+  }
+
+  .barra .borde-izq{
+    border-left: 1px var(--gris) solid;
+  }
+  
+  .barra li a:hover {
+    background-color: #f4f4f4;
+  }
+  
+  .barra .desplegue .desplegue-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+    z-index: 11;
+  }
+  
+  .desplegue-menu li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+    text-transform: capitalize;
+  }
+  
+  .desplegue-menu li a:hover {
+    background-color: #f4f4f4;
+  }
+  
+  .desplegue:hover .desplegue-menu {
+    display:flex;
+  }
+
+  .busqueda{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 35%;
+    position: relative;
+    padding-left: 10px;
+  }
+
+  .cont_input{
+    width: 90%;
+    height: 70%;
+    position: relative;
+  }
+
+  .cont_input input{
+    width: 100%;
+    height: 100%;
+    border: 1px var(--gris) solid;
+  }
+
+  .cont_input i{
+    color: var(--gris);
+  }
+
+  .icono_buscar{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    font-size: 24px;
+  }
+
+.slider {
+    width: 100%;
+    height: 85vh; 
+    overflow: hidden; 
+    position: relative;
+}
+
+.forma {
+    position: absolute; /* Posiciona la figura dentro de la sección */
+    top: 0;
+    right: 0;
+    width: 100%; /* Toma el ancho completo del contenedor */
+    height: 100%; /* Toma el alto completo del contenedor */
+    background-color: #f87148c2; /* Color de fondo con opacidad para ilustración */
+    /* clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%); */
+    clip-path: polygon(40% 0, 100% 0, 100% 100%, 60% 100%);
+    z-index: 10; /* Asegura que esté detrás del contenido de la sección */
+}
+
+.slider figure {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slider figure img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+}
+
+  /* Ajustes para la lista de imágenes */
+  #slider4 li {
+    position: relative;
+  }
+  
+  #slider4 img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .direccion_container {
+    margin-bottom: 50px;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    }
+    .direccion_container ul {
+        width: 100%;
+        height: 100%; /* O una altura fija, si prefieres */
+        overflow: hidden; /* Asegura que el contenido excedente no sea visible */
+        display: flex; /* Alineación centrada si es necesario */
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+
+    .direccion_container ul li{
+        width: 100%;
+        height: 100%;
+    }
+    .direccion_container ul li figure{
+        width: 100%;
+        height: 100%;
+    }
+  .direccion {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    }
+  
+  .direccion li {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    }
+  
+  .direccion img {
+    display: block;
+    position: relative;
+    height: auto;
+    width: 100%;
+    border: 0;
+    }
+
+  .direccion_nav {
+    position: absolute;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    top: 52%;
+    left: 0;
+    opacity: 0.7;
+    z-index: 11;
+    text-indent: -9999px;
+    overflow: hidden;
+    text-decoration: none;
+    height: 61px;
+    width: 38px;
+    background: transparent url("imagenes/themes.gif") no-repeat left top;
+    margin-top: -45px;
+    }
+  
+  .direccion_nav:active {
+    opacity: 1.0;
+    }
+  
+  .direccion_nav.next {
+    left: auto;
+    background-position: right top;
+    right: 0;
+    }
+
+    .extra-content {
+        width: 30%;
+        height: 80%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 8%;
+        z-index: 11;
+        color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 16px;
+        display: none; /* Oculta inicialmente */
+        text-align: right;
+        display: flex;
+        align-items: center;
+    }
+
+    .extra-content p{
+        color: white;
+        font-weight: bold;
+        font-size: 68px;
+    }
+
+
+
+/* CSS PARA SERVICIOS */
+.negro{
+    color: var(--negro);
+}
+.cont_servicios h1{
+    color: var(--rojo);
+    font-size: 36px;
+}
+.cont_servicios p{
+    font-size: 15px;
+    color: var(--grisTexto);
+}
+.cont_servicios a{
+    text-decoration: none;
+    padding: 10px 17px;
+    background-color: var(--rojo);
+    color: white;
+    font-size: 24px;
+    display: inline-block;
+}
+.cont_servicios{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.servicio{
+    width: 30%;
+    overflow: hidden;
+}
+.servicio figure{
+    width: 100%;
+    height: 250px;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.servicio figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+}
+
+.servicio figure img:hover {
+    transform: scale(1.25);
+    filter: grayscale(100%) brightness(70%);
+}
+
+.icono {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 32px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.servicio figure:hover .icono {
+    opacity: 1; /* Muestra el icono en hover */
+}
+
+
+/* CSS PARA ACORDEON */
+
+.acordeon_ti {
+  margin: right;
+  padding-left: 40px;
+}
+
+.tamanio{
+  width: 80%;
+}
+.acordeon_ti h1{
+  font-size: 32px;
+  color: var(--negro);
+}
+.contenedor_acordeon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.modulos_acordeon{
+  width: 30%;
+}
+.acordeon_titulo{
+  color: var(--rojo);
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px var(--gris) solid;
+}
+
+.acordeon_titulo i{
+  font-size: 16px;
+  padding-right: 10px;
+  color: var(--gris);
+}
+
+.acordeon_titulo h3{
+  font-size: 14px;
+}
+
+.acordeon_contenido{
+  display: none;
+  color: white;
+  padding: 20px;
+  background-color: #ff5739de;
+  border-radius: 5px;
+}
+
+/* FLOTAR ACORDEON */
+
+.acordeon_float{
+  position: relative;
+  height: 200px;
+}
+.flotar{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ocultar{
+  display: none;
+}
+
+
+/* CSS PARA SECCION PARALAX */
+.parallax {
+  height: 550px; /* Altura del contenedor */
+  background-image: url('imagenes/parallax.png'); 
+  background-attachment: fixed; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  color: white; 
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+
+.contenido{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgba(46, 46, 46, 0.589);
+  width: 100%;
+  height: 100%;
+  padding-left: 100px;
+}
+
+.puntos{
+  text-align: left;
+  padding: 20px 20px;
+  width: 70%;
+}
+
+.puntos h1{
+  font-size: 72px;
+  line-height: 1;
+}
+
+
+
+/* CSS PARA EL LIGHTBOX */
+.gallery {
+  display: flex;
+  gap: 10px;
+  height: 260px;
+  justify-content: space-between;
+  padding: 10px 45px;
+}
+
+.gallery a {
+  display: block;
+  width: 32%;
+  border-radius: 10px;
+  object-fit: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 5px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.gallery a img:hover {
+  transform: scale(1.25);
+  filter: grayscale(100%) brightness(90%);
+}
+.gallery a:hover{
+  box-shadow: 0 10px 15px rgba(252, 111, 111, 0.596);
+}
+.gallery a:hover .icono{
+  opacity: 1;
+}
+
+/* CSS PARA SECCION CARRUSEL */
+.carrousel-mapa{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 45px;
+  height: 400px;
+}
+.carrusel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  width: 50%;
+  height: 100%;
+}
+
+.pista-carrusel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 85%;
+}
+
+.item-carrusel {
+  min-width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.item-carrusel iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.controles {
+  padding: 5px;
+  width: 30%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.control {
+  background: var(--rojo);
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 35%;
+}
+.control i{
+  color: white;
+  font-size: 24px;
+}
+
+.control:hover {
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 10px 15px rgba(252, 111, 111, 0.596);
+}
+
+.mapa{
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mapa h1{
+  text-align: center;
+  width: 60%;
+  font-size: 36px;
+  color: var(--negro);
+  border-bottom: 2px var(--rojo) solid;
+}
+
+.maps{
+  width: 100%;
+  height: 80%;
+}
+.maps iframe{
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* CSS PARA EL CONTACTO Y FORMULARIO */
+
+.form-contacto{
+  display: flex;
+  flex-direction: row;
+  padding: 10px 45px;
+  justify-content: space-evenly;
+}
+
+.contacto{
+  padding: 20px;
+  width: 30%;
+  font-size: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.contacto h1{
+  font-size: 32px;
+  color: var(--negro);
+}
+.contacto p{
+  color: var(--grisTexto);
+}
+.contacto h4{
+  color: var(--rojo);
+  font-weight: 400;
+}
+.contacto .num{
+  font-size: 22px;
+  font-weight: bold;
+}
+.contacto i{
+  color: var(--gris);
+  padding-right: 10px;
+  font-size: 24px;
+}
+.extra{
+  display: flex;
+  align-items: center;
+}
+.redes a i{
+  font-size: 32px;
+  transition: color 0.4s ease
+}
+
+.redes a:hover i{
+  color: var(--rojo);
+}
+
+.formulario {
+  width: 35%;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.formulario h1 {
+    font-size: 32px;
+    color: var(--negro);
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.formulario textarea {
+  resize: none;
+  height: 80px;
+}
+
+.formulario button {
+  padding: 10px;
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 10px 15px rgba(252, 111, 111, 0.596);
+}
+
+.piepag{
+  padding: 20px 45px;
+  color: var(--negro);
+  display: flex;
+  justify-content: space-between;
+}
